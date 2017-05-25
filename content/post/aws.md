@@ -1,7 +1,7 @@
 ---
 title: "AWS and Go"
 description: "Using AWS in your Go applications"
-date: "2014-09-01"
+date: "2017-05-01"
 categories:
   - "tutorial"
 tags:

@@ -1,0 +1,4 @@
+baseURL = "http://blog.daumau.io/"
+languageCode = "en-us"
+title = "DauMau Blog"
+canonifyURLs = true
