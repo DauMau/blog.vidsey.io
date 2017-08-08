@@ -1,0 +1,39 @@
+{{ partial "header.html" . }}
+
+	<header id="header" class="header{{ if .Site.Params.cover }} has-cover{{ end }}">
+		<div class="inner">
+			<a class="header-title" href="{{ .Site.BaseURL }}">
+				<h1 class="header-name">{{ .Site.Title }}</h1>
+				{{ if .Site.Params.Subtitle }}
+					<span class="header-description">{{ .Site.Params.Subtitle }}</span>
+				{{ end }}
+			</a>
+		</div>
+		{{ if .Site.Params.cover }}
+		<div class="header-cover blured-image" style="background-color: darkgreen; background-image: url(/images/cover.low.jpg)" data-src="{{ .Site.Params.cover }}"></div>
+		{{ end }}
+	</header>
+
+	<div id="post-index" class="container">
+
+		<main class="content" role="main">
+
+			<div class="post-list">
+				<div id="push">
+
+			{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+
+			{{ range $index, $page := $paginator.Pages }}
+			  {{ .Render "li" }}
+			{{ end }}
+
+				</div>
+			</div>
+
+			{{ partial "pagination.html" (dict "paginator" $paginator "site" .Site ) }}
+
+		</main>
+
+	</div>
+
+{{ partial "footer.html" . }}

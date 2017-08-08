@@ -1,4 +1,17 @@
-baseURL = "http://blog.daumau.io/"
+baseURL = "http://127.0.0.1/"
 languageCode = "en-us"
-title = "DauMau Blog"
-canonifyURLs = true
+title = "Vidsey Blog"
+theme = "bleak"
+
+[params]
+Subtitle = "Procedural video generation"
+description = "Procedural video generation"
+cover = "/images/cover.jpg"
+logo = "/images/logo.svg"
+
+ # Google analytics
+  googleAnalyticsUserID = "UA-99135840-1"
+
+[params.author]
+image = "/content/images/logo200.jpg"
+website = "http://www.vidsey.io"
