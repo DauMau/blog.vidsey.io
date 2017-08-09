@@ -7,6 +7,8 @@ categories:
 tags:
   - "aws"
   - "go"
+author: "Alex Guerrieri"
+author_twitter: "KlaidLiadon"
 ---
 
 
@@ -151,7 +153,7 @@ func downloadHandler(c *gin.Context) {
 }
 ```
 
-Check [`aws_v1.go`](https://github.com/DauMau/Blog/tree/master/content/post/aws_v1.go) to see the full example.
+Check [`aws_v1.go`](https://github.com/DauMau/blog.vidsey.io/blob/master/_examples/awsandgo/aws_v1.go) to see the full example.
 
 ### Extra: add some caching
 
@@ -174,7 +176,7 @@ cache.timers[key] = e.AfterFunc(keep, func() {
 })
 ```
 
-The full code is available at [`aws_v2.go`](https://github.com/DauMau/Blog/tree/master/content/post/aws_v2.go).
+The full code is available at [`aws_v2.go`](https://github.com/DauMau/blog.vidsey.io/blob/master/_examples/awsandgo/aws_v2.go).
 
 Beside reduction in response time, this approach grants a huge advantage for our use case. We are using the `http.ServeFile` 
 method, that calls `http.ServeContent` under the hood. As we can see it accepts an `io.ReadSeeker` (an `*os.File` in our case), because 
