@@ -25,12 +25,12 @@ Also:
 
 ## Credentials
 
-The first step in order to use AWS with Go is creating an user for your use case using [IAM](1), and create an access key for that user.
+The first step in order to use AWS with Go is creating an user for your use case using [IAM](https://aws.amazon.com/documentation/iam/), and create an access key for that user.
 This will produce an access key and a secret that you will need in order to access the services.
 
 The package requires that both values are stored in two environmental variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. 
 You can choose to store this variable in your environment directly or you can read them from a configuration file and set them 
-in the Go runtime directly, or you can use the [NewStaticCredentials](2) function in your configuration:
+in the Go runtime directly, or you can use the [NewStaticCredentials](http://docs.aws.amazon.com/sdk-for-go/api/aws/credentials/#NewStaticCredentials) function in your configuration:
 
 ```go
 package main
@@ -90,7 +90,7 @@ We will use two endpoints:
 - `upload` will receive the file via POST and save it to S3
 - `download` will recover and return the file
 
-We will be using [gin](5) instead of the standard `net/http` because it adds a lot of utilities for a negligible overhead.
+We will be using [gin](https://github.com/gin-gonic/gin) instead of the standard `net/http` because it adds a lot of utilities for a negligible overhead.
 
 #### Upload
 
@@ -125,7 +125,7 @@ func uploadHandler(c *gin.Context) {
 
 #### Download
 
-We retrieve the file from S3 and we return it to the user. In order to generate an unique ID we use the [ULID](4) package.
+We retrieve the file from S3 and we return it to the user. In order to generate an unique ID we use the [ULID](https://github.com/oklog/ulid) package.
 
 ```go
 func downloadHandler(c *gin.Context) {
@@ -180,10 +180,4 @@ Beside reduction in response time, this approach grants a huge advantage for our
 method, that calls `http.ServeContent` under the hood. As we can see it accepts an `io.ReadSeeker` (an `*os.File` in our case), because 
 it parses the `Range` header, and returns just the selected range, instead of the whole file. This is perfect for a big video file 
 because it makes possible to start playing the video before the whole content is downloaded, or allows you to skip from a part to 
-another. The HTTP code for the response it's not `200 - OK`, but it's `206 - Partial Content` (more info on [206](3)).
-
-[1]: https://aws.amazon.com/documentation/iam/
-[2]: http://docs.aws.amazon.com/sdk-for-go/api/aws/credentials/#NewStaticCredentials
-[3]: https://httpstatuses.com/206
-[4]: https://github.com/oklog/ulid
-[5]: https://github.com/gin-gonic/gin
+another. The HTTP code for the response it's not `200 - OK`, but it's `206 - Partial Content` (more info on [206](https://httpstatuses.com/206)).
