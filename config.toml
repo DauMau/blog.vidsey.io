@@ -1,4 +1,4 @@
-baseURL = "http://127.0.0.1/"
+baseURL = "https://blog.vidsey.io/"
 languageCode = "en-us"
 title = "Vidsey Blog"
 theme = "bleak"
@@ -14,4 +14,4 @@ logo = "/images/logo.svg"
 
 [params.author]
 image = "/content/images/logo200.jpg"
-website = "http://www.vidsey.io"
+website = "https://blog.vidsey.io"
