@@ -7,8 +7,7 @@ categories:
 tags:
   - "aws"
   - "go"
-author: "Alex Guerrieri"
-author_twitter: "KlaidLiadon"
+author: "alex"
 ---
 
 

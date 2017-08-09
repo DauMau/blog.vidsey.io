@@ -10,9 +10,21 @@ cover = "/images/cover.jpg"
 logo = "/images/logo.svg"
 googleAnalyticsUserID = "UA-99135840-1"
 
+[blackfriday]
+hrefTargetBlank = true
+
 [params.author]
 image = "/content/images/logo200.jpg"
 website = "https://blog.vidsey.io"
 
-[blackfriday]
-hrefTargetBlank = true
+[params.staff.alex]
+name = "Alex Guerrieri"
+twitter = "KlaidLiadon"
+
+[params.staff.rok]
+name = "Rok Biderman"
+twitter = "RokBiderman"
+
+[params.staff.vesna]
+name = "Vesna Planko"
+twitter = "VesnaPlanko"
