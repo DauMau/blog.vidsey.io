@@ -155,7 +155,7 @@
               <a class="rss" href="{{.RSSLink}}">
                 <i class="icon-rss"></i>
               </a>
-                {{ if .IsPage }}
+                {{ if and .IsPage .Site.Menus.main}}
                 <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
                 {{ end }}
                 {{ if .Site.Menus.main }}
