@@ -12,6 +12,8 @@ tags:
 author: "vesna"
 ---
 
+![Man holding a picture](/images/man_picture.jpg)
+
 *"What is this about?" And "You can’t automate creative work!"*
 
 There was always a task I absolutely hated as a designer - creating social media visuals. 
