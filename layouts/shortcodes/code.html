@@ -1,0 +1,11 @@
+{{- $lines := split (readFile (print "/_examples/" (.Get "file"))) "\n" -}}
+{{- $start := sub (int (.Get "start")) 1 -}}
+{{- $end := int (.Get "end") -}}
+
+<pre>
+    <code class="language-{{.Get "language"}}">
+        {{- range last (sub $end $start) (first $end $lines) -}}
+            {{- . }}
+        {{- end -}}
+    </code>
+</pre>
