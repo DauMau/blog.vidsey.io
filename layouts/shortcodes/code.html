@@ -1,10 +1,10 @@
-{{- $lines := split (readFile (print "/_examples/" (.Get "file"))) "\n" -}}
-{{- $start := sub (int (.Get "start")) 1 -}}
-{{- $end := int (.Get "end") -}}
-
+{{- $rows := split (readFile (print (.Site.Params.codeLocation) "/" (.Get "file"))) "\n" -}}
+{{- $parts := split (.Get "lines") "-" -}}
+{{- $start := sub (int (index $parts 0)) 1 -}}
+{{- $end := int (index $parts 1) -}}
 <pre>
     <code class="language-{{.Get "language"}}">
-        {{- range last (sub $end $start) (first $end $lines) -}}
+        {{- range last (sub $end $start) (first $end $rows) -}}
             {{- . }}
         {{- end -}}
     </code>

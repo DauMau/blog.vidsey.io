@@ -9,6 +9,7 @@ description = "Procedural video generation"
 cover = "/images/cover.jpg"
 logo = "/images/logo.svg"
 googleAnalyticsUserID = "UA-99135840-1"
+codeLocation = "_examples"
 
 [blackfriday]
 hrefTargetBlank = true
